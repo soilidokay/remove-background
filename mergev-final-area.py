@@ -95,7 +95,7 @@ def detect_seam_boundaries_v3(image, threshold=0.4, max_width=1200,
 
 
 # Ví dụ dùng cho nhiều ảnh
-start = 44
+start = 43
 count = 56
 debug = True
 
