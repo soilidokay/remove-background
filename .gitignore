@@ -29,7 +29,7 @@ build/
 dist/
 *.egg-info/
 *.egg
-
+outputs/*.jpg
 # Environments
 .env
 venv
