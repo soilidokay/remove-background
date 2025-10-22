@@ -106,22 +106,23 @@ def detect_seam_boundaries_v3(image, thresholds=[0.4], max_width=1200,
 
 
 # Ví dụ dùng cho nhiều ảnh
-start = 44
-count = 56
+start = 56
+count = 62 
 debug = True
 thresholds = [0.7, 0.6, 0.5, 0.4]  # Danh sách các ngưỡng để thử
 
-for i in range(start, count):
+for i in range(start, count+1):
     image_path = f'images/{i}.png'
     img = cv2.imread(image_path)
     if img is None:
         print(f"Lỗi: Không thể đọc ảnh từ đường dẫn {image_path}")
         continue
 
-    result = detect_seam_boundaries_v3(img, thresholds=thresholds, min_seam_width=0.3, max_seam_width=0.9, show=debug,ignore_edges=False,edge_margin=50)
+    result = detect_seam_boundaries_v3(img, thresholds=thresholds, min_seam_width=0.3,
+                                       max_seam_width=0.9, show=debug, ignore_edges=False, edge_margin=50)
 
     if result["seam_region"] is not None:
-        output_path = f'output_seam_region_{i}.png'
+        output_path = f'outputs/output_seam_region_{i}.png'
         cv2.imwrite(output_path, result["seam_region"])
         print(f"Ảnh vùng seam đã được lưu tại: {output_path}")
     else:

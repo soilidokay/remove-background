@@ -106,7 +106,7 @@ for i in range(start, count):
         print(f"Lỗi: Không thể đọc ảnh từ đường dẫn {image_path}")
         continue
 
-    result = detect_seam_boundaries_v3(img, threshold=0.4, min_seam_width=0.3, max_seam_width=0.9, show=debug,ignore_edges=True)
+    result = detect_seam_boundaries_v3(img, threshold=0.4, min_seam_width=0.3, max_seam_width=0.9, show=debug,ignore_edges=False)
 
     if result["seam_region"] is not None:
         output_path = f'output_seam_region_{i}.png'
